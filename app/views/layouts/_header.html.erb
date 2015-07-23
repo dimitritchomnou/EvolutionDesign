@@ -1,0 +1,27 @@
+<!-- Ajout du _header  -->
+<!-- Nous faisons intervenir la notion de partiel -->
+<header>
+	<!-- Lien pour le logo -->
+	<%= link_to logo, root_path %>
+	<nav class="round">
+		<ul>
+			<!-- Lien page home -->
+			<li><%= link_to "Accueil", root_path %></li>
+			<!-- Lien vers le profil -->
+			<% if signed_in? %>
+			<li><%= link_to "Utilisateurs", users_path %></li>
+      		<li><%= link_to "Profil", current_user %></li>
+      		<li><%= link_to "Réglages", edit_user_path(current_user) %></li>
+      		<% end %>
+			<!-- Lien page help -->
+			<li><%= link_to "Aide", pages_help_path %></li>
+			<!-- Authentification -->
+			<% if signed_in? %>
+			<li><%= link_to "Déconnexion", signout_path %></li>
+			<% else %>
+			<li><%= link_to "S'identifier", signin_path %></li>
+			<% end %>
+			<!-- Authentification -->
+		</ul>
+	</nav>
+</header>

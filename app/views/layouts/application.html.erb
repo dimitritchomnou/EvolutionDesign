@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <title><%= titre %></title>
+	    <!-- Ajout du _stylesheets -->
+	    <%= render 'layouts/stylesheets' %>
+        <!-- Tag pour javascript -->
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+        <%= csrf_meta_tag %>
+
+             
+	</head>
+	<body>
+    	<div class="container">
+
+    		<!-- Ajout du _header-->
+    		<%= render 'layouts/header' %>
+    		<section class="round">
+                <!--Ajout du contenu de la variable flash au layout du site -->
+                <% flash.each do |key, value| %>
+                  <div class="flash <%= key %>"><%= value %></div>
+                <% end %>
+    			<%= yield %>
+    		</section>
+    		<!-- Ajout du _Footer -->
+    		<%= render 'layouts/footer' %>
+
+            <%= render 'layouts/socialButton' %>
+            <!-- Erreurs de page -->
+            <%= debug(params) if Rails.env.development? %>
+            
+    	</div>
+    </body>
+</html>
