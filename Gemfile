@@ -4,7 +4,8 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+#gem 'sqlite3'
+gem 'mysql2'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -26,12 +27,6 @@ gem 'rake', '~> 10.4.2'
 
 #social bouton
 gem 'social-share-button', '~> 0.1.6'
-
-#-----------------
-gem 'devise'
-gem 'active-admin-skin'
-gem 'activeadmin', git: 'https://github.com/activeadmin/activeadmin.git'
-#---------------
 
 
 # Use jquery as the JavaScript library

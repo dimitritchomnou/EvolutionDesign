@@ -1,0 +1,18 @@
+<% flash.each do |name, msg| %>
+  <% if msg.present? %>
+    <div class="alert alert-danger alert <%= flash_class(name.to_s)%> animated shake inscription_message" style="margin:60px 0 0 0 !important;">
+      <!-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> -->
+      <%= content_tag :div, :id => "flash_#{name}" do %>
+        <% if msg.class.eql?(String) %>
+          <%= msg.try :html_safe %>
+        <% elsif msg.class.eql?(Array) %>
+          <ul>
+            <% msg.each do |m| %>
+              <li><%= m.try :html_safe %></li>
+            <% end %>
+          </ul>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>

@@ -1,35 +1,39 @@
 <!DOCTYPE html>
-<html>
-  	<head>
-	    <title><%= titre %></title>
-	    <!-- Ajout du _stylesheets -->
-	    <%= render 'layouts/stylesheets' %>
-        <!-- Tag pour javascript -->
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-        <%= csrf_meta_tag %>
+<html lang="en">
+<head>
+   <title><%= (content_for? :title) ? (yield :title) : "EvolutionDesign" %></title>
+  <meta charset="UTF-8">
+  <!-- For mobile responsives -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Facebook Metadata-->
+  <meta property="fb:page_id" content="" />
+  <meta property="og:site_name" content = "EvolutionDesign" />
+  <meta property="og:image" content="<%= asset_url('logo4.png') %>" />
+  <meta property="og:title" content = "EvolotionDesign La plateforme du design industriel" />
+  <meta property="og:description" content= "EvolotionDesign La plateforme du design industriel"/>
 
-             
-	</head>
-	<body>
-    	<div class="container">
+  <!-- Google+ Metadata /-->
+  <meta itemprop="name" content="">
+  <meta itemprop="image" content="<%= asset_url('logo4.png') %>" />
 
-    		<!-- Ajout du _header-->
-    		<%= render 'layouts/header' %>
-    		<section class="round">
-                <!--Ajout du contenu de la variable flash au layout du site -->
-                <% flash.each do |key, value| %>
-                  <div class="flash <%= key %>"><%= value %></div>
-                <% end %>
-    			<%= yield %>
-    		</section>
-    		<!-- Ajout du _Footer -->
-    		<%= render 'layouts/footer' %>
+  <meta name="description" content="<%= (content_for? :meta_desc) ? (yield :meta_desc) : "EvolotionDesign La plateforme du design industriel" %> ">
+  <% if content_for? :meta %>
+    <%= yield :meta %>
+  <% end %>
 
-            <%= render 'layouts/socialButton' %>
-            <!-- Erreurs de page -->
-            <%= debug(params) if Rails.env.development? %>
-            
-    	</div>
-    </body>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-no-turbolink>
+  <%= render 'layouts/header' %>
+  <% unless content_for? :messages %>
+      <%= render 'layouts/messages' %>
+  <% end %>
+  <%= yield %>
+  <%= render 'layouts/footer' %>
+</body>
 </html>

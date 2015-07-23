@@ -1,54 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  get 'sessions/new'
-
-  #ajout de la ressources users pour 
-  #faire fonctionner Url de l'utilisateur
-  #resources :users
-  #sessions
-  resources :sessions, :only => [:new, :create, :destroy]
-  resources :microposts, :only => [:create, :destroy]
-  #route pour les relations users
-  resources :relationships, :only => [:create, :destroy]
- 
- 
-  #resources pour user/relation
-  resources :users do
-    member do
-      get :following, :followers
-    end
-  end
-
-
-  get 'users/new'
-  #route pour inscription
-  get '/signup' => 'users#new'
-
-  #create new sessions
-  get '/signin' => 'sessions#new'
-
-  post '/signin' => 'sessions#create'
-  #delete sessions 
-  get '/signout' => 'sessions#destroy', via: 'delete' #include méthod delete
-
-
-
-  #Add routes home
   root 'pages#home'
-  get 'pages/home' => 'pages#home'
-
-  #Add routes contact
-  get 'pages/contact' => 'pages#contact'
-
-  #Add routes About
-  get 'pages/about' => 'pages#about'
-
-  #Add routes Help
-  get 'pages/help' => 'pages#help'
-
+  get 'about' => 'pages#about'
+  get 'contact' => 'pages#contact'
+  
   #Add routes user
   
 
