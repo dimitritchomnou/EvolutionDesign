@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
+  get 'realisation' => 'pages#realisation'
+  get 'expertise'  => 'pages#expertise'
   
   #Add routes user
   
