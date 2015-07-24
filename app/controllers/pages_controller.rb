@@ -8,4 +8,12 @@ class PagesController < ApplicationController
 		#about
 	end
 
+	def realisation
+		#realisation
+	end
+
+	def expertise
+		#expertise
+	end
+
 end
