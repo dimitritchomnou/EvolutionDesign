@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.0'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'mysql2'
+gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,7 +28,6 @@ gem 'rake', '~> 10.4.2'
 #social bouton
 gem 'social-share-button', '~> 0.1.6'
 
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -42,7 +41,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 #gem pour pagination
 gem 'will_paginate'
 # Use ActiveModel has_secure_password
-
+gem 'passenger'
 gem 'bcrypt', '~> 3.1.7'
 #gem 'bootstrap-on'
 
@@ -67,7 +66,7 @@ group :development, :test do
 
   #For test
   gem 'rspec-rails'
-  #introduit simplement des commentaires sur le modèle de données dans le fichier du modèle 
+  #introduit simplement des commentaires sur le modèle de données dans le fichier du modèle
   gem 'annotate'
   gem 'webrat', '0.7.1'
   #examples de users
