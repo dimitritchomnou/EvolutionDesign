@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "dimitritchomnou@gmail.com <>"
-  default to: "dimitritchomnou@yahoo.fr"
+  default from: "Evolution Design <dimitritchomnou@evolutiondesign.herokuapp.com>"
+  default to: "dimitritchomnou@evolutiondesign.herokuapp.com"
   layout 'mailer'
 end
