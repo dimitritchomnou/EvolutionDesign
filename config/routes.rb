@@ -5,6 +5,13 @@ Rails.application.routes.draw do
   get 'contact' => 'pages#contact'
   get 'realisation' => 'pages#realisation'
   get 'expertise'  => 'pages#expertise'
+
+  
+  resources :pages do
+    collection do
+      post :contact_post
+    end
+  end
   
   #Add routes user
   
