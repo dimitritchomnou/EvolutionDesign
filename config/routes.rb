@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  devise_for :users
   root 'pages#home'
   get 'about' => 'pages#about'
   get 'contact' => 'pages#contact'
   get 'realisation' => 'pages#realisation'
   get 'expertise'  => 'pages#expertise'
 
-  
+
+
   resources :pages do
     collection do
       post :contact_post

@@ -1,0 +1,34 @@
+<% content_for :title do %>
+  Mot de passe oublié
+<% end %>
+
+<div class="form-container">
+  <div class="container-row">
+    <div class="authform">
+      <%= render 'layouts/messages' %>
+      <div class="form_header">
+        <p class="title">Mot de passe oublié</p>
+        <span class="fa fa-lock fa-5x"></span>
+      </div>
+      <div class="form_content">
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), :html => { :role => 'form' }) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="form-group">
+            <%= f.email_field :email, :autofocus => true, class: 'form-control', placeholder: "Email" %>
+          </div>
+          <%= f.submit "Envoyer les instructions",  class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+      <div class="form_footer">
+        <p class="text-center">
+          Vous n'avez pas de compte ? 
+          <a href="<%= pages_register_path %>" class="switch" gumby-trigger="#register-modal">Inscrivez-vous.</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

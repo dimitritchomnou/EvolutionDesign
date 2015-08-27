@@ -45,6 +45,7 @@ gem 'will_paginate'
 gem 'passenger'
 gem 'bcrypt', '~> 3.1.7'
 #gem 'bootstrap-on'
+gem 'devise'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

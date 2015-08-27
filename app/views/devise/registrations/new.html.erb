@@ -1,0 +1,45 @@
+<% content_for :title do %>
+  Inscription weeXimmo
+<% end %>
+
+<div class="container form-container">
+  <div class="row">
+    <div class="authform">
+      <%= render 'layouts/messages' %>
+
+      <div class="form_header">
+        <p class="title" style="margin-top:30px">Inscription</p>
+        <span class="fa fa-lock"></span>
+      </div>
+      <div class="form_content">
+        <%= form_for resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form'} do |f| %>
+          <%= devise_error_messages! %>
+
+          <div class="form-group form-group-lg">
+            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: "Email" %>
+          </div>
+
+          <div class="form-group form-group-lg">
+            <%= f.password_field :password, class: 'form-control', placeholder: "Mot de passe" %>
+          </div>
+
+          <div class="form-group form-group-lg">
+            <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "Confirmation du mot de passe" %>
+          </div>
+
+          <div class='form-group'>
+            <%= f.submit "Inscription", class: 'btn-dark-blue' %>
+          </div>
+        <% end %>
+      </div>
+      <div class="form_footer">
+        <p>
+          Vous avez un compte? <%= link_to "Connectez vous ?", new_user_session_path %>
+        </p>
+        <p>
+          Mot de passe <%= link_to 'oublié ?', new_password_path(resource_name) %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

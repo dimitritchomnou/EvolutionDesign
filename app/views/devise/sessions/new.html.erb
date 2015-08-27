@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row row-registration box">
+    <div class="col-xs-offset-1 col-xs-10 col-sm-offset-2 col-sm-8 col-registration">
+      <h2 class="text-center">Connectez-vous.</h2>
+
+      <%- if devise_mapping.omniauthable? %>
+        <%= link_to omniauth_authorize_path(resource_name, :facebook) do %>
+          <i class="fa fa-facebook-square" style="font-size: 40px;"></i>
+        <% end %>
+      <% end -%>
+
+      <%- if devise_mapping.omniauthable? %>
+        <%= link_to omniauth_authorize_path(resource_name, :linkedin) do %>
+          <i class="fa fa-linkedin-square" style="font-size: 40px; padding-left: 10px;"></i><br />
+        <% end %>
+      <% end -%>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form', class:"form-reg"}) do |f| %>
+
+        <div class="form-group form-group-lg">
+          <div class='col-xs-12 col-sm-offset-2 col-sm-8 text-left'>
+            <%= f.label :email, class: "control-label" %>
+            <%= f.text_field :email, required: true, class: 'form-control reg-line', autofocus: true %>
+          </div>
+        </div>
+
+        <div class="form-group form-group-lg">
+          <div class='col-xs-12 col-sm-offset-2 col-sm-8 text-left'>
+            <%= f.label :password, class: "control-label" %>
+            <%= f.password_field :password, required: true, class: 'form-control reg-line' %>
+          </div>
+        </div>
+      
+        <div class='col-xs-12 text-center'>
+          <%= f.submit 'Connexion', class:"btn btn-primary" %>
+        </div>
+      <% end %>
+
+      <div class="col-xs-12 text-center">
+        <p>Mot de passe <%= link_to 'oublié ?', new_password_path(resource_name) %></p>
+      </div>
+
+    </div>
+  </div>
+</div>

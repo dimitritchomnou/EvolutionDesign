@@ -1,0 +1,38 @@
+<div class="container-fluid grey-background">
+  <div class="authform">
+    <p class="title big">Mot de passe</p>
+    <p class="subtitle">Réinitialiser votre mot de passe</p>
+    <div class="form_header">
+      <span class="fa fa-user"></span>
+    </div>
+    <div class="form_content">
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+        <%= f.hidden_field :social_connect, value: 1 %>
+
+        <div class="form-group">
+          <%= f.password_field :password, autofocus: true, autocomplete: "off", class: 'form-control', placeholder: "Nouveau Mot de passe", required: true%>
+        </div>
+
+        <div class="form-group">
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control', placeholder: "Confirmation du mot de passe", required: true %>
+        </div>
+        <%= f.submit "Changer mon mot de passe", :class => 'submit_button' %>
+
+      <% end %>
+    </div>
+    <div class="form_footer">
+      <div class="footer_content">
+        <div class="left">
+          <%= link_to  login_path do %>
+            <span class="fa fa-unlock-alt"></span> Se connecter
+          <% end %>
+        </div>
+        <div class="right">
+          Vous n'avez pas de compte? <a href="#" class="switch" gumby-trigger="#register-modal">Inscrivez vous ?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

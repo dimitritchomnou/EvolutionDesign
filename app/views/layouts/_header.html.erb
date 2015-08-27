@@ -1,5 +1,5 @@
-<div class="brand">Evolution Design</div>
-<div class="address-bar">3481 Melrose Place | Beverly Hills, CA 90210 | 123.456.7890</div>
+<div class="brand">E.Design</div>
+<div class="address-bar">BP 6740 Douala| Cameroun, E.Design | (+237) 74 83 59 37 - 93 94 15 46</div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
@@ -13,28 +13,29 @@
                 <span class="icon-bar"></span>
             </button>
             <!-- navbar-brand is hidden on larger screens, but visible when the menu is collapsed -->
-            <a class="navbar-brand" href="index.html">Business Casual</a>
+            <a class="navbar-brand" href="index.html">E.Design</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
                 <li class="<%= active_link('home', 'pages') %>">
-                    <%= link_to "Home", root_path  %>
+                    <%= link_to "Accueil", root_path  %>
                 </li>
 
-                <li class="<%= active_link('about', 'pages') %>">
-                    <%= link_to "About", about_path  %>
+                <li class="<%= active_link('realisation', 'pages') %>">
+                    <%= link_to "realisations", realisation_path  %>
                 </li>
-                <li class="<%= active_link('realisations', 'pages') %>">
-                    <%= link_to "Realisations", realisation_path  %>
+
+                 <li class="<%= active_link('about', 'pages') %>">
+                    <%= link_to "A propos de nous", about_path  %>
                 </li>
-                <li class="<%= active_link('expertise', 'pages') %>">
-                    <%= link_to "Expertise", expertise_path  %>
-                </li>
+    
                 <li class="<%= active_link('contact', 'pages') %>">
                     <%= link_to "Contact", contact_path  %>
                 </li>
+
             </ul>
+
         </div>
         <!-- /.navbar-collapse -->
     </div>
